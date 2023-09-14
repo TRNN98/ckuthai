@@ -1,0 +1,8 @@
+pass_key_store : uttscappsoat123
+
+--Google Play
+E-Mail : ssc_mgr@soatsolution.com
+Password : Pa$$w0rds0@t 
+
+
+Package : com.soatsolution.UTTSC
