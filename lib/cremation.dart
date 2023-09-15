@@ -106,7 +106,7 @@ class _CremationState extends State<Cremation> {
 
   Widget _detail({cremation}) => Container(
         child: ListView.separated(
-          padding: EdgeInsets.only(top: 0),
+          padding: EdgeInsets.only(top: 10),
           separatorBuilder: (context, index) => Divider(
             color: Colors.transparent,
             height: 0,
@@ -170,30 +170,15 @@ class _CremationState extends State<Cremation> {
             itemBuilder: (context, index) {
               return MyClass.checkNull(snapshot.data[index].gainCrem) == ''
                   ? ListTile(
-                      title: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 4,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    Text(
-                                      MyClass.checkNull(
-                                          snapshot.data[index].memberGain),
-                                      textAlign: TextAlign.left,
-                                      textScaleFactor: MyClass.blocFontSizeApp(
-                                          _fontsizeapps),
-                                      style: CustomTextStyle.dataBoldTxt(
-                                          context, -2),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
+                      title: Expanded(
+                        flex: 4,
+                        child: Text(
+                          MyClass.checkNull(snapshot.data[index].memberGain),
+                          textAlign: TextAlign.end,
+                          textScaleFactor:
+                              MyClass.blocFontSizeApp(_fontsizeapps),
+                          style: CustomTextStyle.dataBoldTxt(context, -2),
+                        ),
                       ),
                     )
                   : ExpansionTile(
