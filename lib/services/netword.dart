@@ -129,12 +129,11 @@ class Network {
           jsonResponse.map((i) => ShareModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -154,12 +153,11 @@ class Network {
           jsonResponse.map((i) => Headshare.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -180,12 +178,11 @@ class Network {
           jsonResponse.map((i) => Deposits.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -207,12 +204,11 @@ class Network {
           jsonResponse.map((i) => DepositMovement.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -233,12 +229,11 @@ class Network {
           jsonResponse.map((i) => LoanModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -260,12 +255,11 @@ class Network {
           jsonResponse.map((i) => LoanGuaranteeModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -287,12 +281,11 @@ class Network {
           jsonResponse.map((i) => LoanMovementModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -314,12 +307,11 @@ class Network {
           jsonResponse.map((i) => GuaranteeModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -340,12 +332,11 @@ class Network {
           jsonResponse.map((i) => DividendModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -367,12 +358,11 @@ class Network {
           jsonResponse.map((i) => DividendDetailModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -393,12 +383,11 @@ class Network {
           jsonResponse.map((i) => KeptModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -420,12 +409,11 @@ class Network {
           jsonResponse.map((i) => KeptDetailModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -446,12 +434,11 @@ class Network {
           jsonResponse.map((i) => GainModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -466,19 +453,17 @@ class Network {
     String jsons = json.encode(data);
     final response =
         await http.post(url, headers: headers, body: json.decode(jsons));
-
     if (response.statusCode == 200) {
       final List jsonResponse = json.decode(response.body);
       List<CremationModel> result =
           jsonResponse.map((i) => CremationModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -498,12 +483,11 @@ class Network {
           jsonResponse.map((i) => InfoModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
@@ -523,12 +507,11 @@ class Network {
           jsonResponse.map((i) => NewsModel.fromJson(i)).toList();
       return result;
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => Pins(gettitle: 'pinCode'),
-        ),
-      );
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) => Pins(gettitle: 'pinCode')),
+          (Route<dynamic> route) => false);
     }
   }
 
