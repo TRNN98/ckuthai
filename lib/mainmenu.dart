@@ -175,6 +175,7 @@ class _MainMenuState extends State<MainMenu> {
                             ),
                             AutoSizeText(
                               Language.menuLg(menus[index].title, widget.lgs),
+                              textAlign: TextAlign.center,
                               textScaleFactor:
                                   MyClass.blocFontSizeApp(widget.fontsizeapps),
                               style: TextStyle(

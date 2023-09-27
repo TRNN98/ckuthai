@@ -63,8 +63,10 @@ class CustomUI {
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(Language.menuLg('welcome', lgs),
+                              textAlign: TextAlign.left,
                               textScaleFactor: MyClass.fontSizeApp(),
                               style: CustomTextStyle.titleTxt(context, -20)),
                           Text(name,
@@ -76,12 +78,15 @@ class CustomUI {
                   )
                 : Column(
                     mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(Language.menuLg('welcome', lgs),
+                          textAlign: TextAlign.left,
                           textScaleFactor:
                               MyClass.blocFontSizeApp(_fontsizeapps),
                           style: CustomTextStyle.titleTxt(context, 0)),
                       Text(name,
+                          textAlign: TextAlign.left,
                           textScaleFactor:
                               MyClass.blocFontSizeApp(_fontsizeapps),
                           style: CustomTextStyle.titleTxt(context, -10)),

@@ -10,10 +10,11 @@ import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 
 double _fontsizeapps = 1.0;
+
 class About extends StatefulWidget {
   String lgs;
   double fontsizeapps;
-  About({Key key, this.lgs,this.fontsizeapps}) : super(key: key);
+  About({Key key, this.lgs, this.fontsizeapps}) : super(key: key);
   @override
   _AboutState createState() => _AboutState();
 }
@@ -131,7 +132,8 @@ Container _versionApp(context, lgs) {
                 child: Center(
                   child: Text(
                     Language.settingLg('application', lgs),
-                    textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
+                    textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                    style: CustomTextStyle.settingTxt(context, 5),
                   ),
                 ),
               ),
@@ -141,7 +143,8 @@ Container _versionApp(context, lgs) {
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
                       Language.settingLg('version', lgs),
-                      textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
+                      textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                      style: CustomTextStyle.settingTxt(context, 5),
                     ),
                   ),
                   Expanded(
@@ -151,8 +154,13 @@ Container _versionApp(context, lgs) {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            MyClass.versionApp().split('.')[0] +'.'+ int.parse(MyClass.versionApp().split('.')[1]).toString(),
-                            textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
+                            MyClass.versionApp().split('.')[0] +
+                                '.' +
+                                int.parse(MyClass.versionApp().split('.')[1])
+                                    .toString(),
+                            textScaleFactor:
+                                MyClass.blocFontSizeApp(_fontsizeapps),
+                            style: CustomTextStyle.settingTxt(context, 5),
                           )
                         ],
                       ),
@@ -187,128 +195,115 @@ Container _versionMobile(device, context, lgs) {
               border: Border(
                   left:
                       BorderSide(color: MyColor.color('settings'), width: 8))),
-          child: Column(
-            children: [
-              Expanded(
-                child: Center(
-                  child: Text(
-                    Language.settingLg('mobile', lgs),
-                    textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              children: [
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      Language.settingLg('mobile', lgs),
+                      textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                      style: CustomTextStyle.settingTxt(context, 5),
+                    ),
                   ),
                 ),
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      Language.settingLg('version', lgs),
-                      textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            device.version,
-                            textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
-                          )
-                        ],
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        Language.settingLg('version', lgs),
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.settingTxt(context, 0),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      Language.settingLg('platform', lgs),
-                      textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            device.platform,
-                            textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
-                          )
-                        ],
+                    Expanded(
+                      child: Text(
+                        device.version,
+                        textAlign: TextAlign.end,
+                        overflow: TextOverflow.ellipsis,
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.settingTxt(context, 0),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      Language.settingLg('model', lgs),
-                      textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            device.model,
-                            textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
-                          )
-                        ],
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        Language.settingLg('platform', lgs),
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.settingTxt(context, 0),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              // Row(
-              //   children: [
-              //     Padding(
-              //       padding: const EdgeInsets.only(left: 15),
-              //       child: Text(
-              //         'Name',
-              //         textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
-              //       ),
-              //     ),
-              //     Expanded(
-              //       child: Padding(
-              //         padding: const EdgeInsets.only(right: 15),
-              //         child: SingleChildScrollView(
-              //           child: Row(
-              //             mainAxisAlignment: MainAxisAlignment.end,
-              //             children: [
-              //               AutoSizeText(
-              //                 device.name,
-              //                 textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  TextStyle(
-              //                   fontFamily: "FC_Lamoon",
-              //                   fontWeight: FontWeight.bold,
-              //                   color: Colors.green,
-              //                   // fontSize: 30,
-              //                 ),
-              //                 // textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, -5),
+                    Expanded(
+                      child: Text(
+                        device.platform,
+                        overflow: TextOverflow.ellipsis,
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.settingTxt(context, 0),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        Language.settingLg('model', lgs),
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.settingTxt(context, 0),
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        device.model,
+                        overflow: TextOverflow.ellipsis,
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.settingTxt(context, 0),
+                      ),
+                    ),
+                  ],
+                ),
+                // Row(
+                //   children: [
+                //     Padding(
+                //       padding: const EdgeInsets.only(left: 15),
+                //       child: Text(
+                //         'Name',
+                //         textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, 5),
+                //       ),
+                //     ),
+                //     Expanded(
+                //       child: Padding(
+                //         padding: const EdgeInsets.only(right: 15),
+                //         child: SingleChildScrollView(
+                //           child: Row(
+                //             mainAxisAlignment: MainAxisAlignment.end,
+                //             children: [
+                //               AutoSizeText(
+                //                 device.name,
+                //                 textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  TextStyle(
+                //                   fontFamily: "FC_Lamoon",
+                //                   fontWeight: FontWeight.bold,
+                //                   color: Colors.green,
+                //                   // fontSize: 30,
+                //                 ),
+                //                 // textScaleFactor:MyClass.blocFontSizeApp(_fontsizeapps) ,style:  CustomTextStyle.settingTxt(context, -5),
 
-              //                 minFontSize: 20,
-              //                 maxLines: 1,
-              //               )
-              //             ],
-              //           ),
-              //         ),
-              //       ),
-              //     ),
-              //   ],
-              // ),
-            ],
+                //                 minFontSize: 20,
+                //                 maxLines: 1,
+                //               )
+                //             ],
+                //           ),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+              ],
+            ),
           ),
         ),
         clipper: ShapeBorderClipper(

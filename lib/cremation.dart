@@ -104,20 +104,25 @@ class _CremationState extends State<Cremation> {
     );
   }
 
-  Widget _detail({cremation}) => Container(
-        child: ListView.separated(
-          padding: EdgeInsets.only(top: 10),
-          separatorBuilder: (context, index) => Divider(
-            color: Colors.transparent,
-            height: 0,
-          ),
-          itemCount: cremation.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: EdgeInsets.only(
-                  left: paddinglist(context, 4),
-                  right: paddinglist(context, 4)),
-              child: Column(
+  Widget _detail({cremation}) {
+    ScrollController _scrollController = ScrollController();
+
+    return Padding(
+      padding: const EdgeInsets.only(left: 15, right: 15),
+      child: Scrollbar(
+        isAlwaysShown: true,
+        controller: _scrollController,
+        child: Container(
+          child: ListView.separated(
+            controller: _scrollController,
+            padding: EdgeInsets.only(top: 10),
+            separatorBuilder: (context, index) => Divider(
+              color: Colors.transparent,
+              height: 0,
+            ),
+            itemCount: cremation.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Column(
                 children: [
                   Row(
                     children: [
@@ -128,7 +133,7 @@ class _CremationState extends State<Cremation> {
                           textAlign: TextAlign.left,
                           textScaleFactor:
                               MyClass.blocFontSizeApp(_fontsizeapps),
-                          style: CustomTextStyle.dataBoldTxt(context, -2),
+                          style: CustomTextStyle.dataBoldTxt(context, 2),
                         ),
                       ),
                       Expanded(
@@ -142,11 +147,14 @@ class _CremationState extends State<Cremation> {
                   ),
                   _gainNameTitle(cremation[index].gainType)
                 ],
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
-      );
+      ),
+    );
+  }
+
   Widget _gainNameTitle(gaintype) {
     return Theme(
       data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
@@ -165,34 +173,25 @@ class _CremationState extends State<Cremation> {
           }
           return ListView.builder(
             padding: EdgeInsets.all(0),
+            physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: snapshot.data.length,
             itemBuilder: (context, index) {
               return MyClass.checkNull(snapshot.data[index].gainCrem) == ''
                   ? ListTile(
-                      title: Expanded(
-                        flex: 4,
-                        child: Text(
-                          MyClass.checkNull(snapshot.data[index].memberGain),
-                          textAlign: TextAlign.end,
-                          textScaleFactor:
-                              MyClass.blocFontSizeApp(_fontsizeapps),
-                          style: CustomTextStyle.dataBoldTxt(context, -2),
-                        ),
+                      title: Text(
+                        MyClass.checkNull(snapshot.data[index].memberGain),
+                        textAlign: TextAlign.end,
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.dataBoldTxt(context, -1),
                       ),
                     )
                   : ExpansionTile(
-                      title: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            MyClass.checkNull(snapshot.data[index].memberGain),
-                            textAlign: TextAlign.end,
-                            textScaleFactor:
-                                MyClass.blocFontSizeApp(_fontsizeapps),
-                            style: CustomTextStyle.dataBoldTxt(context, -2),
-                          ),
-                        ],
+                      title: Text(
+                        MyClass.checkNull(snapshot.data[index].memberGain),
+                        textAlign: TextAlign.end,
+                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
+                        style: CustomTextStyle.dataBoldTxt(context, -1),
                       ),
                       children: <Widget>[
                         ListTile(
@@ -207,7 +206,7 @@ class _CremationState extends State<Cremation> {
                                   textScaleFactor:
                                       MyClass.blocFontSizeApp(_fontsizeapps),
                                   style:
-                                      CustomTextStyle.defaultTxt(context, -4),
+                                      CustomTextStyle.defaultTxt(context, -3),
                                 ),
                               ),
                               Expanded(
@@ -219,7 +218,7 @@ class _CremationState extends State<Cremation> {
                                   textScaleFactor:
                                       MyClass.blocFontSizeApp(_fontsizeapps),
                                   style:
-                                      CustomTextStyle.defaultTxt(context, -4),
+                                      CustomTextStyle.defaultTxt(context, -3),
                                 ),
                               ),
                             ],
@@ -230,52 +229,6 @@ class _CremationState extends State<Cremation> {
             },
           );
         },
-      ),
-    );
-  }
-
-  Widget _buildExpandableTile(cremation) {
-    return ListTile(
-      title: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        MyClass.checkNull(cremation.gainShort),
-                        textAlign: TextAlign.left,
-                        textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
-                        style: CustomTextStyle.dataBoldTxt(context, -2),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 4,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Text(
-                      MyClass.checkNull(cremation.memberGain),
-                      textAlign: TextAlign.left,
-                      textScaleFactor: MyClass.blocFontSizeApp(_fontsizeapps),
-                      style: CustomTextStyle.dataBoldTxt(context, -2),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )
-        ],
       ),
     );
   }

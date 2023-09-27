@@ -466,7 +466,7 @@ class Language {
 
   static pinLg(m, l) {
     if (m == 'pinCode') {
-      return l == 'en' ? "Please enter the PIN Code" : "กรุณาใส่รหัส PIN Code";
+      return l == 'en' ? "Please enter the PIN Code" : "กรุณาใส่ PIN Code";
     }
     if (m == 'pleaseTryAgain') {
       return l == 'en'

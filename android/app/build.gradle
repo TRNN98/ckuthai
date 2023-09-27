@@ -43,7 +43,7 @@ android {
         applicationId "com.soatsolution.UTTSC"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 202007
+        versionCode 202010
         versionName '2.2'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
